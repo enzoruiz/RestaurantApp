@@ -57,17 +57,20 @@ WSGI_APPLICATION = 'RestaurantApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbrestaurantapp',                      
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': ''
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PE'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -80,3 +83,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = ('',
+    BASE_DIR + '/static/',
+)
+
+TEMPLATE_DIRS = ('',
+    BASE_DIR + '/templates',
+)
